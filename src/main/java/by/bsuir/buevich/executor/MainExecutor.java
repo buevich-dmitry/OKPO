@@ -28,7 +28,10 @@ public class MainExecutor {
             QualityModel qualityModel = qualityModelProvider.getQualityModel(fileName);
             double result = qualityCalculator.calculateQuality(qualityModel);
             Messenger.showInfoMessage(String.format("Интегральная оценка качество системы: %.2f", result));
-        } catch (FileNotFoundException | JAXBException e) {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            Messenger.showErrorMessage("Указанный вами файл не найден.");
+        } catch (JAXBException e) {
             e.printStackTrace();
             Messenger.showErrorMessage("Предосталенный вами документ не соответствует формату. Формат документа описан в schema.xsd");
         } catch (ValidationException e) {
