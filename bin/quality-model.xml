@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<!DOCTYPE quality-model SYSTEM "src/main/resources/schema.xsd">-->
+
+<quality-model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="schema.xsd">
+    <characteristic>
+        <name>Функциональная пригодность</name>
+        <sub-characteristic>
+            <name>Функциональная полнота</name>
+            <metric>
+                <value>10</value>
+                <reference-value>15</reference-value>
+                <importance-factor>2</importance-factor>
+            </metric>
+        </sub-characteristic>
+        <sub-characteristic>
+            <name>Соответствие функциональности</name>
+            <metric>
+                <value>8</value>
+                <reference-value>15</reference-value>
+                <importance-factor>1.5</importance-factor>
+            </metric>
+        </sub-characteristic>
+    </characteristic>
+    <characteristic>
+        <name>Надёжность</name>
+        <sub-characteristic>
+            <name>Завершённость</name>
+            <metric>
+                <value>15</value>
+                <reference-value>17</reference-value>
+                <importance-factor>1</importance-factor>
+            </metric>
+        </sub-characteristic>
+        <sub-characteristic>
+            <name>Устойчивость к ошибке</name>
+            <metric>
+                <value>35</value>
+                <reference-value>46</reference-value>
+                <importance-factor>1</importance-factor>
+            </metric>
+        </sub-characteristic>
+        <sub-characteristic>
+            <name>Восстанавливаемость</name>
+            <metric>
+                <value>10</value>
+                <reference-value>12</reference-value>
+                <importance-factor>1</importance-factor>
+            </metric>
+        </sub-characteristic>
+    </characteristic>
+    <characteristic>
+        <name>Эффективность</name>
+        <sub-characteristic>
+            <name>Завершённость</name>
+            <metric>
+                <value>0.7</value>
+                <reference-value>1</reference-value>
+                <importance-factor>3</importance-factor>
+            </metric>
+        </sub-characteristic>
+        <sub-characteristic>
+            <name>Использование ресурсов</name>
+            <metric>
+                <value>700</value>
+                <maximal-value>1024</maximal-value>
+                <importance-factor>3</importance-factor>
+            </metric>
+        </sub-characteristic>
+    </characteristic>
+    <characteristic>
+        <name>Тестируемость</name>
+        <sub-characteristic>
+            <name>Завершённость</name>
+            <metric>
+                <value>0.7</value>
+                <reference-value>1</reference-value>
+                <importance-factor>3</importance-factor>
+            </metric>
+        </sub-characteristic>
+        <sub-characteristic>
+            <name>Документирование</name>
+            <metric>
+                <value>50</value>
+                <reference-value>84</reference-value>
+                <importance-factor>0.5</importance-factor>
+            </metric>
+        </sub-characteristic>
+    </characteristic>
+</quality-model>

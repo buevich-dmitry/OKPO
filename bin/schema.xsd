@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="quality-model">
+        <xs:annotation>
+            <xs:documentation>Главный элемент схемы. Описывает модель качества системы.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="characteristic" type="Characteristic" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>Описание конкретной характеристики.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Characteristic">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Название характеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="sub-characteristic" type="SubCharacteristic" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Описание под-характеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SubCharacteristic">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Название подхарактеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="metric" type="Metric">
+                <xs:annotation>
+                    <xs:documentation>Описание метрики подхарактеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Metric">
+        <xs:sequence>
+            <xs:element name="value" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation>Значение метрики подхарактеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="reference-value" type="xs:double" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Эталонное значение метрики подхарактеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="maximal-value" type="xs:double" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Максимальное значение метрики подхарактеристики.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="importance-factor" type="xs:double" default="1">
+                <xs:annotation>
+                    <xs:documentation>Коэффициент важности.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
